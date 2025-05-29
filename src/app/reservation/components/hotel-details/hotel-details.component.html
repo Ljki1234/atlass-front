@@ -1,0 +1,17 @@
+<section class="section hotel-details">
+  <h2 class="section-title">Détails de votre réservation</h2>
+  <div class="hotel-info">
+    <div class="hotel-image">
+      <img [src]="suiteImage" [alt]="suiteName">
+    </div>
+    <div class="hotel-content">
+      <h3 class="hotel-name">{{ suiteName }}</h3>
+      <div class="suite-features">
+        <h4>Équipements</h4>
+        <ul>
+          <li *ngFor="let feature of suiteFeatures">{{ feature }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

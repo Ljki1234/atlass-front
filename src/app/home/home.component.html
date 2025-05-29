@@ -1,0 +1,832 @@
+<!-- Video Popup -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg class="bi" width="40"
+                                                                                                height="40">
+          <use xlink:href="#close-sharp"></use>
+        </svg></button>
+        <div class="ratio ratio-16x9">
+          <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                  allow="autoplay"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol xmlns="http://www.w3.org/2000/svg" id="facebook" viewBox="0 0 24 24">
+    <path fill="currentColor"
+          d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="youtube" viewBox="0 0 32 32">
+    <path fill="currentColor"
+          d="M29.41 9.26a3.5 3.5 0 0 0-2.47-2.47C24.76 6.2 16 6.2 16 6.2s-8.76 0-10.94.59a3.5 3.5 0 0 0-2.47 2.47A36.13 36.13 0 0 0 2 16a36.13 36.13 0 0 0 .59 6.74a3.5 3.5 0 0 0 2.47 2.47c2.18.59 10.94.59 10.94.59s8.76 0 10.94-.59a3.5 3.5 0 0 0 2.47-2.47A36.13 36.13 0 0 0 30 16a36.13 36.13 0 0 0-.59-6.74ZM13.2 20.2v-8.4l7.27 4.2Z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 256 256">
+    <path fill="currentColor"
+          d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32Zm48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56Zm40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="twitter" viewBox="0 0 24 24">
+    <path fill="currentColor"
+          d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="custom-icon" viewBox="0 0 448 512">
+    <path fill="currentColor"
+          d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-icon" viewBox="0 0 512 512">
+    <path fill="currentColor"
+          d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256L359.873 121.377z" />
+  </symbol>
+
+    <symbol xmlns="http://www.w3.org/2000/svg" id="icon-heart" viewBox="0 0 576 512">
+      <path d="M183.1 235.3c33.7 20.7 62.9 48.1 85.8 80.5c7 9.9 13.4 20.3 19.1 31c5.7-10.8 12.1-21.1 19.1-31c22.9-32.4 52.1-59.8 85.8-80.5C437.6 207.8 490.1 192 546 192l9.9 0c11.1 0 20.1 9 20.1 20.1C576 360.1 456.1 480 308.1 480L288 480l-20.1 0C119.9 480 0 360.1 0 212.1C0 201 9 192 20.1 192l9.9 0c55.9 0 108.4 15.8 153.1 43.3zM301.5 37.6c15.7 16.9 61.1 71.8 84.4 164.6c-38 21.6-71.4 50.8-97.9 85.6c-26.5-34.8-59.9-63.9-97.9-85.6c23.2-92.8 68.6-147.7 84.4-164.6C278 33.9 282.9 32 288 32s10 1.9 13.5 5.6z"/>
+    </symbol>
+  <symbol id="hotel" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM48 368l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 240l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 112l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16L64 96c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM160 128l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32L192 96c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-128 0z"/>
+  </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="icon-spa" viewBox="0 0 576 512">
+      <path d="M128 127.7C128 74.9 170.9 32 223.7 32c48.3 0 89 36 95 83.9l1 8.2c2.2 17.5-10.2 33.5-27.8 35.7s-33.5-10.2-35.7-27.8l-1-8.2c-2-15.9-15.5-27.8-31.5-27.8c-17.5 0-31.7 14.2-31.7 31.7l0 96.3 192 0 0-96.3C384 74.9 426.9 32 479.7 32c48.3 0 89 36 95 83.9l1 8.2c2.2 17.5-10.2 33.5-27.8 35.7s-33.5-10.2-35.7-27.8l-1-8.2c-2-15.9-15.5-27.8-31.5-27.8c-17.5 0-31.7 14.2-31.7 31.7L448 361c-1.6 1-3.3 2-4.8 3.1c-18 12.4-40.1 20.3-59.2 20.3c0 0 0 0 0 0l0-96.5-192 0 0 96.5c-19 0-41.2-7.9-59.1-20.3c-1.6-1.1-3.2-2.2-4.9-3.1l0-233.3zM306.5 389.9C329 405.4 356.5 416 384 416c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 469.7 417 480 384 480c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.4 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 405.2 165.1 416 192 416c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0z"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg"  id="icon-shield" viewBox="0 0 448 512">
+      <path d="M416 0C400 0 288 32 288 176l0 112c0 35.3 28.7 64 64 64l32 0 0 128c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 0-112 0-208c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7 .1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7L80 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224.4c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16l0 134.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8L64 16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"/>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="icon-classic" viewBox="0 0 640 512">
+      <path d="M96 64c0-17.7 14.3-32 32-32l320 0 64 0c70.7 0 128 57.3 128 128s-57.3 128-128 128l-32 0c0 53-43 96-96 96l-192 0c-53 0-96-43-96-96L96 64zM480 224l32 0c35.3 0 64-28.7 64-64s-28.7-64-64-64l-32 0 0 128zM32 416l512 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 480c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/>
+    </symbol>
+  <symbol id="book-stack" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+    <path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM192 256l48 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-48 0 0 64zm48 64l-48 0 0 32c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64 0-120c0-22.1 17.9-40 40-40l72 0c53 0 96 43 96 96s-43 96-96 96z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="icon-arrow-left" viewBox="0 0 1024 1024">
+    <path fill="currentColor"
+          d="M752.145 0c8.685 0 17.572 3.434 24.237 10.099c13.33 13.33 13.33 35.143 0 48.473L320.126 515.03l449.591 449.591c13.33 13.33 13.33 35.144 0 48.474c-13.33 13.33-35.142 13.33-48.472 0L247.418 539.268c-13.33-13.33-13.33-35.144 0-48.474L727.91 10.1C734.575 3.435 743.46.002 752.146.002z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 1024 1024">
+    <path fill="currentColor"
+          d="M271.653 1023.192c-8.685 0-17.573-3.432-24.238-10.097c-13.33-13.33-13.33-35.144 0-48.474L703.67 508.163L254.08 58.573c-13.33-13.331-13.33-35.145 0-48.475c13.33-13.33 35.143-13.33 48.473 0L776.38 483.925c13.33 13.33 13.33 35.143 0 48.473l-480.492 480.694c-6.665 6.665-15.551 10.099-24.236 10.099z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-down" viewBox="0 0 24 24">
+    <path fill="currentColor" d="m12 13.171l4.95-4.95l1.414 1.415L12 16L5.636 9.636L7.05 8.222l4.95 4.95Z" />
+  </symbol>
+
+  <symbol id="player" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="90" cy="90" r="89.5" stroke="white" stroke-opacity="0.65" />
+    <circle cx="90" cy="90" r="73.5" stroke="white" stroke-opacity="0.65" />
+    <circle cx="90" cy="90" r="57.5" stroke="white" stroke-opacity="0.65" />
+    <path
+      d="M77.5625 67.634V112.366L80.7202 110.303L112.303 89.9998L80.7181 69.6965L77.5625 67.634ZM81.6875 75.1766L104.697 89.9998L81.6875 104.825V75.1766Z"
+      fill="white" />
+  </symbol>
+
+  <symbol xmlns="http://www.w3.org/2000/svg" id="btn-close" viewBox="0 0 16 16">
+    <path
+      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+  </symbol>
+
+  <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-up" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+  </symbol>
+
+  <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-down" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+          d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+  </symbol>
+  <symbol id="icon-credit-card" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+    <path d="M186.3 258.2c0 12.2-9.7 21.5-22 21.5-9.2 0-16-5.2-16-15 0-12.2 9.5-22 21.7-22 9.3 0 16.3 5.7 16.3 15.5zM80.5 209.7h-4.7c-1.5 0-3 1-3.2 2.7l-4.3 26.7 8.2-.3c11 0 19.5-1.5 21.5-14.2 2.3-13.4-6.2-14.9-17.5-14.9zm284 0H360c-1.8 0-3 1-3.2 2.7l-4.2 26.7 8-.3c13 0 22-3 22-18-.1-10.6-9.6-11.1-18.1-11.1zM576 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h480c26.5 0 48 21.5 48 48zM128.3 215.4c0-21-16.2-28-34.7-28h-40c-2.5 0-5 2-5.2 4.7L32 294.2c-.3 2 1.2 4 3.2 4h19c2.7 0 5.2-2.9 5.5-5.7l4.5-26.6c1-7.2 13.2-4.7 18-4.7 28.6 0 46.1-17 46.1-45.8zm84.2 8.8h-19c-3.8 0-4 5.5-4.2 8.2-5.8-8.5-14.2-10-23.7-10-24.5 0-43.2 21.5-43.2 45.2 0 19.5 12.2 32.2 31.7 32.2 9 0 20.2-4.9 26.5-11.9-.5 1.5-1 4.7-1 6.2 0 2.3 1 4 3.2 4H200c2.7 0 5-2.9 5.5-5.7l10.2-64.3c.3-1.9-1.2-3.9-3.2-3.9zm40.5 97.9l63.7-92.6c.5-.5 .5-1 .5-1.7 0-1.7-1.5-3.5-3.2-3.5h-19.2c-1.7 0-3.5 1-4.5 2.5l-26.5 39-11-37.5c-.8-2.2-3-4-5.5-4h-18.7c-1.7 0-3.2 1.8-3.2 3.5 0 1.2 19.5 56.8 21.2 62.1-2.7 3.8-20.5 28.6-20.5 31.6 0 1.8 1.5 3.2 3.2 3.2h19.2c1.8-.1 3.5-1.1 4.5-2.6zm159.3-106.7c0-21-16.2-28-34.7-28h-39.7c-2.7 0-5.2 2-5.5 4.7l-16.2 102c-.2 2 1.3 4 3.2 4h20.5c2 0 3.5-1.5 4-3.2l4.5-29c1-7.2 13.2-4.7 18-4.7 28.4 0 45.9-17 45.9-45.8zm84.2 8.8h-19c-3.8 0-4 5.5-4.3 8.2-5.5-8.5-14-10-23.7-10-24.5 0-43.2 21.5-43.2 45.2 0 19.5 12.2 32.2 31.7 32.2 9.3 0 20.5-4.9 26.5-11.9-.3 1.5-1 4.7-1 6.2 0 2.3 1 4 3.2 4H484c2.7 0 5-2.9 5.5-5.7l10.2-64.3c.3-1.9-1.2-3.9-3.2-3.9zm47.5-33.3c0-2-1.5-3.5-3.2-3.5h-18.5c-1.5 0-3 1.2-3.2 2.7l-16.2 104-.3 .5c0 1.8 1.5 3.5 3.5 3.5h16.5c2.5 0 5-2.9 5.2-5.7L544 191.2v-.3zm-90 51.8c-12.2 0-21.7 9.7-21.7 22 0 9.7 7 15 16.2 15 12 0 21.7-9.2 21.7-21.5 .1-9.8-6.9-15.5-16.2-15.5z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="page-arrow" width="24" height="24" viewBox="0 0 24 24">
+    <path fill="currentColor" d="m12 15l-5-5h10l-5 5Z" />
+  </symbol>
+</svg>
+
+<header id="header" class="site-header header-scrolled position-absolute text-black bg-light">
+  <nav id="header-nav" class="navbar fixed-top navbar-expand-lg px-3 py-3">
+    <div class="container-fluid">
+      <button class="navbar-toggler d-flex d-lg-none order-3 p-2 shadow-none" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <svg class="navbar-icon">
+          <use xlink:href="#navbar-icon"></use>
+        </svg>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
+        <div class="offcanvas-header px-4 pb-0">
+          <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"
+                  data-bs-target="#bdNavbar"></button>
+        </div>
+        <div class="offcanvas-body text-hover light-border">
+          <ul id="navbar"
+              class="navbar-nav text-uppercase justify-content-lg-center justify-content-md-end align-items-center flex-grow-1 pe-3">
+            <li class="nav-item pe-4">
+              <a class="nav-link light text-uppercase active" href="#intro">Accueil</a>
+            </li>
+            <li class="nav-item pe-4">
+              <a class="nav-link light text-uppercase" href="#our-rooms">Suites</a>
+            </li>
+            <li class="nav-item pe-4">
+              <a class="nav-link light text-uppercase" href="#activities">Services</a>
+            </li>
+            <li class="nav-item pe-4">
+              <a class="nav-link light text-uppercase" href="#photo-gallery">Galerie</a>
+            </li>
+            <li class="nav-item pe-4">
+              <a class="nav-link light text-uppercase" href="#booking-wrap">Réserver</a>
+            </li>
+            <li class="nav-item pe-4">
+              <a class="nav-link light text-uppercase" href="https://www.booking.com/hotel/ma/luxury-appart-holidays.fr.html">Réserver via Booking</a>
+            </li>
+
+            <li class="nav-item dropdown pe-4">
+              <!-- <a class="nav-link light text-uppercase dropdown-toggle align-items-center pe-0"
+                 data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages <iconify-icon
+                icon="material-symbols:arrow-drop-down"></iconify-icon>
+              </a> -->
+
+              <ul class="dropdown-menu">
+                <li><a href="about.html" class="dropdown-item">About <span class="badge bg-secondary">PRO</span></a>
+                </li>
+                <li><a href="blog.html" class="dropdown-item">Blog <span class="badge bg-secondary">PRO</span></a>
+                </li>
+                <li><a href="single-post.html" class="dropdown-item">Single-Post <span
+                  class="badge bg-secondary">PRO</span></a></li>
+                <li><a href="rooms.html" class="dropdown-item">Rooms <span class="badge bg-secondary">PRO</span></a>
+                </li>
+                <li><a href="room-details.html" class="dropdown-item">Room-Details <span
+                  class="badge bg-secondary">PRO</span></a></li>
+                <li><a href="booking.html" class="dropdown-item">Booking <span
+                  class="badge bg-secondary">PRO</span></a></li>
+                <li><a href="services.html" class="dropdown-item">Services <span
+                  class="badge bg-secondary">PRO</span></a></li>
+                <li><a href="gallery.html" class="dropdown-item">gallery <span
+                  class="badge bg-secondary">PRO</span></a></li>
+                <li><a href="contact.html" class="dropdown-item">Contact <span
+                  class="badge bg-secondary">PRO</span></a></li>
+                <li><a href="reviews.html" class="dropdown-item">Review <span
+                  class="badge bg-secondary">PRO</span></a></li>
+                <li><a href="faqs.html" class="dropdown-item">FAQs <span class="badge bg-secondary">PRO</span></a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <div class="btn-box">
+            <button class="btn btn-arrow btn-pill btn-medium btn-outline-light position-relative">
+                <span>Book Now<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                   xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.1 25.8"
+                                   enable-background="new 0 0 36.1 25.8" xml:space="preserve">
+                    <g>
+                      <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9"
+                            x2="34" y2="12.9"></line>
+                      <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10"
+                                points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
+                    </g>
+                  </svg></span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section id="intro">
+  <div class="video-holder position-relative">
+    <video #myVideo autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
+      <source src="assets/videos/riad.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la lecture vidéo.
+    </video>
+  </div>
+    <div class="social-links position-absolute">
+    </div>
+</section>
+
+<section id="about" class="py-5 text-center position-relative overflow-hidden bg-light">
+  <div class="pattern-overlay pattern-right position-absolute">
+    <img src="assets/images/leaf-pattern1.png" alt="pattern">
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card shadow-lg border-0 rounded-4 p-4" style="background-color:  #fefefe; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);">
+          <div class="card-body">
+            <h2 class="fw-bold mb-4 text-black">Atlas Front</h2>
+            <p class="text-start mb-0" style="color:  #222222; font-size: 15px; line-height: 1.1; font-family: 'Segoe UI', sans-serif;">
+            Il était une fois, nichée entre les montagnes et le souffle du désert, une maison d'hôtes née d'une passion profonde pour l'accueil et le partage.<br><br>
+            Atlas Front, c'est plus qu'un lieu : c'est un havre où chaque pierre, chaque plante et chaque sourire racontent une histoire unique.<br><br>
+            Ici, le temps semble suspendu, et la nature dévoile sa beauté dans toute sa simplicité. Chaque détail est pensé pour offrir à nos visiteurs un cocon de tranquillité et d'émerveillement.<br><br>
+            Née d'un rêve ancré dans la tradition marocaine, notre maison d'hôtes célèbre la richesse de la région, le charme de ses paysages et la chaleur humaine qui anime nos équipes.<br><br>
+            Nous cultivons bien plus qu'un jardin : un art de vivre, fait de respect, d'authenticité et de moments partagés.<br><br>
+            Que vous soyez venus pour vous ressourcer, découvrir les merveilles alentours ou simplement savourer la douceur du moment,Atlas Front vous invite à une expérience riche en émotions et en rencontres.<br><br>
+              <strong>Bienvenue chez Atlas Front. Votre refuge, votre maison, votre histoire.</strong>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="our-rooms" class="position-relative padding-large pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="display-header d-flex justify-content-between pb-3">
+        <h2 class="display-7 text-dark fw-normal">Explorez Nos Suites</h2>
+      </div>
+      <div class="swiper-arrow">
+        <svg class="icon-arrow-left border rounded-circle position-absolute">
+          <use xlink:href="#icon-arrow-left" />
+        </svg>
+        <svg class="icon-arrow-right border rounded-circle position-absolute">
+          <use xlink:href="#icon-arrow-right" />
+        </svg>
+      </div>
+      <div class="swiper product-swiper ps-md-3">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let suite of suites">
+            <div class="product-card position-relative overflow-hidden">
+              <div class="image-holder">
+                <!-- Carousel for each suite -->
+                <div [id]="'carousel-' + suite.id" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                  <!-- Carousel Indicators -->
+                  <div class="carousel-indicators">
+                    <button type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                    <button type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                  </div>
+
+                  <!-- Carousel Items -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="assets/images/product-item1.jpg" class="d-block w-100" alt="Suite Image 1">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/product-item2.jpg" class="d-block w-100" alt="Suite Image 2">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/product-item3.jpg" class="d-block w-100" alt="Suite Image 3">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/product-item4.jpg" class="d-block w-100" alt="Suite Image 4">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/product-item5.jpg" class="d-block w-100" alt="Suite Image 5">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/product-item6.jpg" class="d-block w-100" alt="Suite Image 6">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/product-item7.jpg" class="d-block w-100" alt="Suite Image 7">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/product-item8.jpg" class="d-block w-100" alt="Suite Image 8">
+                    </div>
+                  </div>
+
+                  <!-- Carousel Controls -->
+                  <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel-' + suite.id" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div class="product-detail mt-3">
+                <h3><a (click)="openSuiteDetailDialog(suite)">{{ suite.description }}</a></h3>
+                <div class="detail position-absolute">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td class="pe-2"><strong>Prix:</strong></td>
+                      <td class="price"><strong>{{ suite.pricePerNight }}€</strong> /Nuit</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacité:</strong></td>
+                      <td>{{ suite.capacity }} personnes</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Équipements:</strong></td>
+                      <td>{{ suite.equipments }}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <a (click)="openSuiteDetailDialog(suite)" class="btn btn-small btn-black btn-pill mt-3">Plus de détails</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="activities" class="overflow-hidden">
+  <div class="container-fluid p-0">
+    <div class="row">
+
+      <div class="col-lg-6 col-md-12 g-0">
+        <div class="image-holder-3d" style="height: 95vh; overflow: hidden; perspective: 1000px;">
+          <div class="swiper activity-gallery-swiper h-100 slider-3d">
+            <div class="swiper-wrapper h-100">
+              <div class="swiper-slide h-100">
+                <img src="assets/images/photo22.jpg" alt="Image 1" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="swiper-slide h-100">
+                <img src="assets/images/photo21.jpg" alt="Image 1" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="swiper-slide h-100">
+                <img src="assets/images/photo20.jpg" alt="Image 1" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="swiper-slide h-100">
+                <img src="assets/images/single-image.jpg" alt="Image 1" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="swiper-slide h-100">
+                <img src="assets/images/photo3.jpg" alt="Image 2" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="swiper-slide h-100">
+                <img src="assets/images/photo4.jpg" alt="Image 3" class="w-100 h-100 object-fit-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-6 col-md-12 bg-gray-100 d-flex align-items-center justify-content-center">
+        <div class="detail">
+
+          <div class="display-header">
+            <h2 class="display-5">Nos Services</h2>
+            <p>Vivez une immersion authentique au cœur du Haut Atlas marocain grâce à une palette d'activités soigneusement pensées pour sublimer votre séjour. Entre découvertes culturelles, instants de bien-être et panoramas à couper le souffle, chaque moment à Atlas Front devient une expérience inoubliable.
+            </p>
+          </div>
+
+          <div class="row mt-5">
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="icon-box d-flex align-items-center pb-5">
+                <div class="icon-box-icon">
+                  <svg class="spa">
+                    <use xlink:href="#icon-heart"></use>
+                  </svg>
+                </div>
+                <div class="icon-box-content ps-3">
+                  <h3 class="card-title text-dark fs-4">Spa</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="icon-box d-flex align-items-center pb-5">
+                <div class="icon-box-icon">
+                  <svg class="fishing">
+                    <use xlink:href="#hotel"></use>
+                  </svg>
+                </div>
+                <div class="icon-box-content ps-3">
+                  <h3 class="card-title text-dark fs-5">Home Cinéma</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="icon-box d-flex align-items-center pb-5">
+                <div class="icon-box-icon">
+                  <svg class="bar">
+                    <use xlink:href="#icon-classic"></use>
+                  </svg>
+                </div>
+                <div class="icon-box-content ps-3">
+                  <h3 class="card-title text-dark fs-5">Boissons</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="icon-box d-flex align-items-center pb-5">
+                <div class="icon-box-icon">
+                  <svg class="pool">
+                    <use xlink:href="#icon-spa"></use>
+                  </svg>
+                </div>
+                <div class="icon-box-content ps-3">
+                  <h3 class="card-title text-dark fs-5">Piscine</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="icon-box d-flex align-items-center pb-5">
+                <div class="icon-box-icon">
+                  <svg class="dining">
+                    <use xlink:href="#icon-shield"></use>
+                  </svg>
+                </div>
+                <div class="icon-box-content ps-3">
+                  <h3 class="card-title text-dark fs-5">Restauration</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="icon-box d-flex align-items-center pb-5">
+                <div class="icon-box-icon">
+                  <svg class="barbeque">
+                    <use xlink:href="#book-stack"></use>
+                  </svg>
+                </div>
+                <div class="icon-box-content ps-3">
+                  <h3 class="card-title text-dark fs-5">Parking</h3>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- row
+
+          //<a href="services.html"
+             class="btn btn-arrow btn-pill btn-medium btn-outline-dark bg-light text-black position-relative">
+              <span>View All Offers<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.1 25.8"
+                                        enable-background="new 0 0 36.1 25.8" xml:space="preserve">
+                  <g>
+                    <line fill="none" stroke="#111111" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34"
+                          y2="12.9"></line>
+                    <polyline fill="none" stroke="#111111" stroke-width="3" stroke-miterlimit="10"
+                              points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
+                  </g>
+                </svg></span>
+          </a>-->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div>
+    <div>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+</section>
+<section id="testimonials" class="position-relative bg-gray-100 py-5">
+  <div class="container" style="max-width: 900px;">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+        <h2 class="fw-bold">Equipements</h2>
+      </div>
+      <div class="swiper testimonial-swiper" style="padding-top: 10px; background: #fff; border-radius: 8px; box-shadow: 0 0 15px rgb(0 0 0 / 0.05);">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide px-4 py-3">
+            <div class="row g-4" style="font-size: 1rem; color: #333;">
+
+              <!-- Colonne gauche -->
+              <div class="col-md-5">
+                <div class="section-block">
+                  <h5 class="fw-bold mb-3">Général</h5>
+                  <ul class="ps-3 mb-4 list-unstyled">
+                    <li>Chauffage</li>
+                    <li>Climatisation</li>
+                    <li>Chambres familiales</li>
+                    <li>Chambres non-fumeurs</li>
+                  </ul>
+                </div>
+                <div class="section-block">
+                  <h5 class="fw-bold mb-3">Parking</h5>
+                  <ul class="ps-3 mb-4 list-unstyled">
+                    <li>Parking sécurisé</li>
+                  </ul>
+                </div>
+                <div class="section-block">
+                  <h5 class="fw-bold mb-3">Services</h5>
+                  <ul class="ps-3 list-unstyled">
+                    <li>Service de réveil</li>
+                    <li>Réception 24h/24</li>
+                    <li>Navette aéroport En supplément</li>
+                    <li>Service d'étage</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Ligne verticale au centre -->
+              <div class="col-md-1 d-flex justify-content-center">
+                <div style="border-left: 2px solid #ccc; height: 100%; border-radius: 1px;"></div>
+              </div>
+
+              <!-- Colonne droite -->
+              <div class="col-md-5">
+                <div class="section-block">
+                  <h5 class="fw-bold mb-3">Bien-être</h5>
+                  <ul class="ps-3 mb-4 list-unstyled">
+                    <li>Spa</li>
+                  </ul>
+                </div>
+                  <div class="section-block">
+                    <h5 class="fw-bold mb-3">Piscines</h5>
+                    <ul class="ps-3 mb-4 list-unstyled">
+                      <li>Ouverte toute l'année</li>
+                      <li>Tous les âges sont les bienvenus</li>
+                    </ul>
+                  </div>
+                  <div class="section-block">
+                  <h5 class="fw-bold mb-3">En extérieur</h5>
+                  <ul class="ps-3 mb-4 list-unstyled">
+                    <li>Rooftop avec vue panoramique</li>
+                    <li>Jardin</li>
+                  </ul>
+                  </div>
+                <div class="section-block">
+                  <h5 class="fw-bold mb-3">Langues parlées</h5>
+                  <ul class="ps-3 list-unstyled">
+                    <li>Arabe</li>
+                    <li>Français</li>
+                    <li>Anglais</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- D'autres slides ici -->
+
+        </div>
+        <div class="swiper-pagination mt-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="booking-wrap" class="padding-large">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="booking-form-wrap">
+                    <form #bookingForm="ngForm" (ngSubmit)="checkAvailability()" class="booking-form d-flex justify-content-between">
+                        <div class="input-group flex-row flex-wrap align-items-center gap-3">
+                            <div class="input-group-text border-0">
+                                <svg class="icon">
+                                    <use xlink:href="#calendar"></use>
+                                </svg>
+                            </div>
+                            <div class="form-outline flex-grow-1">
+                                <input type="text" class="form-control date-range flatpickr-input" id="dateRange" placeholder="Check-in / Check-out" data-date-format="Y-m-d" data-mode="range" readonly="readonly" >
+                            </div>
+                            <div class="input-group-text border-0">
+                                <svg class="icon">
+                                    <use xlink:href="#hotel"></use>
+                                </svg>
+                            </div>
+                            <div class="form-outline flex-grow-1">
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedSuiteDescription" name="selectedSuiteDescription">
+                                    <option value="" disabled selected>Select Suite</option>
+                                    <option *ngFor="let suite of suites" [value]="suite.description">{{ suite.description }}</option>
+                                </select>
+                            </div>
+                            <div class="input-group-text border-0">
+                                <svg class="icon">
+                                    <use xlink:href="#page-arrow"></use>
+                                </svg>
+                            </div>
+                            <div class="form-outline flex-grow-1">
+                                <input type="number" class="form-control" placeholder="Guests" [(ngModel)]="numberOfGuests" name="numberOfGuests">
+                            </div>
+                            <div class="input-group-text border-0">
+                                <svg class="icon">
+                                    <use xlink:href="#money"></use>
+                                </svg>
+                            </div>
+                            <div class="form-outline flex-grow-1">
+                                <input type="text" class="form-control" placeholder="Price"  readonly>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-arrow btn-pill btn-medium btn-primary text-white text-uppercase position-relative"><span>Réserver <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34"
+                                          y2="12.9"></line>
+                                    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="22.2,1.1 34,12.9 22.2,24.7 "></polyline>
+                                </g>
+                            </svg></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="photo-gallery" class="container my-5">
+  <div class="card rounded border-0 p-4" style="background-color: #fefefe; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);">
+    <div class="text-center mb-4">
+      <h2 class="display-5 fw-bold" style="color: #222222;">
+        Galerie Photos
+      </h2>
+    </div>
+
+    <div id="photoCarousel"
+         class="carousel slide"
+         data-bs-ride="carousel"
+         data-bs-interval="false"
+         data-bs-touch="true"
+    >
+      <div class="carousel-inner">
+
+        <div class="carousel-item" *ngFor="let group of photosGrouped; let i = index" [class.active]="i === 0">
+          <div class="row g-3">
+            <div class="col-4" *ngFor="let photo of group.slice(0,3)">
+              <img
+                [src]="photo.thumb"
+                [alt]="photo.alt"
+                class="img-fluid rounded"
+                style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);"
+                (click)="openPhotoModal(photo.large, photo.alt)"
+              />
+            </div>
+            <div class="col-4" *ngFor="let photo of group.slice(3,6)">
+              <img
+                [src]="photo.thumb"
+                [alt]="photo.alt"
+                class="img-fluid rounded"
+                style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);"
+                (click)="openPhotoModal(photo.large, photo.alt)"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Flèches navigation -->
+      <button
+        class="carousel-control-prev custom-control"
+        type="button"
+        data-bs-target="#photoCarousel"
+        data-bs-slide="prev"
+        aria-label="Précédent"
+      >
+        <span class="custom-control-icon">&lt;</span>
+      </button>
+      <button
+        class="carousel-control-next custom-control"
+        type="button"
+        data-bs-target="#photoCarousel"
+        data-bs-slide="next"
+        aria-label="Suivant"
+      >
+        <span class="custom-control-icon">&gt;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Bootstrap -->
+  <div #photoModal class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content position-relative p-0">
+        <button
+          type="button"
+          class="btn-close btn-close-white position-absolute top-0 end-0 m-2"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          style="z-index: 1051;"
+        ></button>
+        <div class="modal-body p-0">
+          <img
+            [src]="currentPhoto"
+            [alt]="currentAlt"
+            class="img-fluid w-100"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="overflow-hidden mb-0">
+  <div class="row g-0">
+    <div class="col-lg-6 col-md-12 bg-gray-100 d-flex flex-column justify-content-center align-items-start px-4 py-3">
+      <h3 class="fw-bold mb-3">Contactez-nous</h3>
+      <p class="small mb-3">
+        Pour plus d'informations ou pour réserver votre séjour chez Atlas Front, n'hésitez pas à contacter notre équipe : Nous serons heureux de répondre à toutes vos questions et vous aider à planifier votre visite.
+        <br>
+        Nous nous réjouissons de votre visite et espérons que vous passerez un séjour agréable.
+      </p>
+      <ul class="list-unstyled small">
+        <li><strong>Adresse :</strong> Km 26 Douar Ait Zatte, Commune de Ghmat
+          Marrakech, Maroc</li>
+        <li><strong>Téléphone :</strong> +212 601 605520</li>
+        <li><strong>Email :</strong> <a href="mailto:contact&#64;atlasfront.com"> contact&#64;atlasfront.com</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-6 col-md-12">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5328.108044599357!2d-7.835611!3d31.4389877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafffbce7cd80f7%3A0x679f89178227f2b0!2sAtlas%20Front%20Douar%20Ait%20Zatte%2C%20Commune%20de%20Ghmat%20Marrakesh!5e0!3m2!1sfr!2sma!4v1715180000000!5m2!1sfr!2sma"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer id="footer" class="overflow-hidden pt-3 pb-0 bg-gray-100">
+
+  <div class="container">
+
+    <div class="row d-flex flex-wrap justify-content-between">
+
+      <div class="col-lg-3 col-md-6 col-sm-6 pb-3">
+        <div class="footer-menu">
+          <h5 class="widget-title pb-2 fw-semibold fs-2">Atlas Front</h5>
+          <p>Maison d'hôtes chaleureuse <br> au cœur des montagnes.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-sm-6 pb-3">
+        <div class="footer-menu">
+          <h5 class="widget-title pb-2 fw-semibold fs-2">Liens</h5>
+          <ul class="menu-list list-unstyled">
+            <li class="pb-2">
+              <a href="#our-rooms">Suites</a>
+            </li>
+            <li class="pb-2">
+              <a href="#activities">Services</a>
+            </li>
+            <li class="pb-2">
+              <a href="#testimonials">Equipements</a>
+            </li>
+            <li class="pb-2">
+              <a href="#photo-gallery">Gallery</a>
+            </li>
+            <li class="pb-2">
+              <a href="#booking-wrap">Réserver</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 pb-3">
+        <div class="footer-menu">
+          <h5 class="widget-title pb-2 fw-semibold fs-2">Réseaux sociaux</h5>
+          <p>Suivez-nous sur les réseaux sociaux et restez connectés avec <a href="#intro">Atlas Front.
+          </a></p>
+          <ul class="social-links list-unstyled d-flex mt-3">
+            <li class="border d-flex justify-content-center align-items-center mx-auto">
+              <a href="#">
+                <svg class="facebook text-primary-500" width="25" height="25">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="border d-flex justify-content-center align-items-center mx-auto">
+              <a href="#">
+                <svg class="instagram text-primary-500" width="25" height="25">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="border d-flex justify-content-center align-items-center mx-auto">
+              <a href="#">
+                <svg class="instagram text-primary-500" width="25" height="25">
+                  <use xlink:href="#custom-icon"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-between border-top pt-3">
+      <div class="col-lg-4">
+        <p>© 2025 Copyright AtlasFront.</p>
+      </div>
+      <div class="col-lg-4">
+        <div class="payment-methods d-flex justify-content-center">
+          <p class="pe-2">Payment methods:</p>
+          <svg class="instagram text-primary-500" width="25" height="25">
+            <use xlink:href="#icon-credit-card"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,11 @@
+<div *ngIf="!cookiesAccepted" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      Ce site utilise des cookies pour vous garantir la meilleure expérience. Vous pouvez accepter ou refuser.
+    </p>
+    <div class="button-group">
+      <button (click)="acceptCookies()" class="btn-accept">Accepter</button>
+      <button (click)="refuseCookies()" class="btn-refuse">Refuser</button>
+    </div>
+  </div>
+</div>
