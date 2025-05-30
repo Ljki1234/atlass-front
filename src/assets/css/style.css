@@ -934,7 +934,7 @@ a.text-hover:focus:after {
 }
 
 #our-rooms .swiper-arrow svg {
-  top: 30%;
+  top: 45%;
   padding: 18px;
   width: 60px;
   height: 60px;
@@ -969,6 +969,12 @@ a.text-hover:focus:after {
 @media only screen and (max-width: 400px) {
   #our-rooms .swiper-arrow svg {
     top: 40%;
+  }
+  #our-rooms svg.icon-arrow-left {
+    left: 20px;
+  }
+  #our-rooms svg.icon-arrow-right {
+    right: 20px;
   }
 }
 

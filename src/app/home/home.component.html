@@ -64,6 +64,14 @@
   <symbol id="parking" viewBox="0 0 448 512">
     <path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM192 256h48c17.7 0 32-14.3 32-32s-14.3-32-32-32h-48v64zm48 64h-48v32c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64V168c0-22.1 17.9-40 40-40h72c53 0 96 43 96 96s-43 96-96 96z"/>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="icon-arrow-left" viewBox="0 0 1024 1024">
+    <path fill="currentColor"
+      d="M752.145 0c8.685 0 17.572 3.434 24.237 10.099c13.33 13.33 13.33 35.143 0 48.473L320.126 515.03l449.591 449.591c13.33 13.33 13.33 35.144 0 48.474c-13.33 13.33-35.142 13.33-48.472 0L247.418 539.268c-13.33-13.33-13.33-35.144 0-48.474L727.91 10.1C734.575 3.435 743.46.002 752.146.002z" />
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 1024 1024">
+    <path fill="currentColor"
+      d="M271.653 1023.192c-8.685 0-17.573-3.432-24.238-10.097c-13.33-13.33-13.33-35.144 0-48.474L703.67 508.163L254.08 58.573c-13.33-13.331-13.33-35.145 0-48.475c13.33-13.33 35.143-13.33 48.473 0L776.38 483.925c13.33 13.33 13.33 35.143 0 48.473l-480.492 480.694c-6.665 6.665-15.551 10.099-24.236 10.099z" />
+  </symbol> 
 </svg>
 
 <header id="header" class="site-header header-scrolled position-absolute text-black bg-light">
@@ -157,168 +165,347 @@
     <div class="row">
       <div class="display-header d-flex justify-content-between pb-3">
         <h2 class="display-7 text-dark fw-normal">Explorez Nos Suites</h2>
+        <br>
+        <br>
+        <br>
       </div>
-
-      <div class="swiper product-swiper">
+      <div class="swiper-arrow">
+        <svg class="icon-arrow-left border rounded-circle position-absolute">
+          <use xlink:href="#icon-arrow-left" />
+        </svg>
+      </div>
+      <div class="swiper product-swiper ps-md-3">
         <div class="swiper-wrapper">
-          <!-- Suite 1 -->
           <div class="swiper-slide">
             <div class="product-card position-relative overflow-hidden">
               <div class="image-holder">
-                <img src="assets/images/product-item1.jpg" alt="Suite 1" class="img-fluid overflow-hidden"
-                  data-bs-toggle="modal" data-bs-target="#suiteModal1" style="cursor: pointer;">
-                <div class="overlay">
-                  <div class="overlay-content">
-                    <span class="badge bg-primary mb-2">Populaire</span>
-                    <h3 class="text-white mb-3">Suite Deluxe</h3>
-                  </div>
-                </div>
+                <img src="assets/images/product-item1.jpg" alt="product-item" class="img-fluid overflow-hidden">
               </div>
               <div class="product-detail mt-3">
-                <h3>
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#suiteModal1"
-                    class="text-decoration-none text-black">Suite Deluxe</a>
-                  </h3>
+                <h3><a href="#">Suite Deluxe Ourika</a></h3>
                 <div class="detail position-absolute">
                   <table>
+                    <div>
+                      <br>
+                    </div>
                     <tbody>
-                      <tr>
-                        <td class="pe-2"><strong>Prix:</strong></td>
-                        <td class="price"><strong>299€</strong> /Nuit</td>
-                      </tr>
-                      <tr>
-                        <td class="pe-2"><strong>Capacité:</strong></td>
-                        <td>2 personnes</td>
-                      </tr>
-                      <tr>
-                        <td class="pe-2"><strong>Équipements:</strong></td>
-                        <td>Wifi, TV, Salle de bain...</td>
-                      </tr>
+                    <tr>
+                      <td class="pe-2">  <strong></strong></td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Price:</strong></td>
+                      <td class="price"><strong>299$</strong> /Pernight</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Size:</strong></td>
+                      <td>10 ft</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacity:</strong></td>
+                      <td>Max persion 2</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Bed:</strong></td>
+                      <td>Normal Beds</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Services:</strong></td>
+                      <td>Wifi, Television, Bathroom,...</td>
+                    </tr>
                     </tbody>
                   </table>
-                  <a href="#" class="btn btn-black btn-pill mt-3" data-bs-toggle="modal"
-                    data-bs-target="#suiteModal1">Plus de détails</a>
                 </div>
               </div>
             </div>
+            <!-- product-card -->
           </div>
           <div class="swiper-slide">
             <div class="product-card position-relative overflow-hidden">
               <div class="image-holder">
-                <img src="assets/images/product-item2.jpg" alt="Suite 2" class="img-fluid overflow-hidden"
-                  data-bs-toggle="modal" data-bs-target="#suiteModal2" style="cursor: pointer;">
-                <div class="overlay">
-                  <div class="overlay-content">
-                    <span class="badge bg-success mb-2">Disponible</span>
-                    <h3 class="text-white mb-3">Suite Premium</h3>
-                  </div>
-                </div>
+                <img src="assets/images/product-item2.jpg" alt="product-item" class="img-fluid overflow-hidden">
               </div>
               <div class="product-detail mt-3">
-                <h3><a href="#" data-bs-toggle="modal" data-bs-target="#suiteModal2"
-                    class="text-decoration-none text-black">Suite Premium</a></h3>
+                <h3><a href="#">Suite Supérieure Wirgan</a></h3>
                 <div class="detail position-absolute">
                   <table>
+                    <div>
+                      <br>
+                    </div>
                     <tbody>
-                      <tr>
-                        <td class="pe-2"><strong>Prix:</strong></td>
-                        <td class="price"><strong>399€</strong> /Nuit</td>
-                      </tr>
-                      <tr>
-                        <td class="pe-2"><strong>Capacité:</strong></td>
-                        <td>3 personnes</td>
-                      </tr>
-                      <tr>
-                        <td class="pe-2"><strong>Équipements:</strong></td>
-                        <td>Wifi, TV, Salle de bain...</td>
-                      </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Price:</strong></td>
+                      <td class="price"><strong>399$</strong> /Pernight</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Size:</strong></td>
+                      <td>10 ft</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacity:</strong></td>
+                      <td>Max persion 2</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Bed:</strong></td>
+                      <td>Normal Beds</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Services:</strong></td>
+                      <td>Wifi, Television, Bathroom,...</td>
+                    </tr>
                     </tbody>
                   </table>
-                  <a href="#" class="btn btn-black btn-pill mt-3" data-bs-toggle="modal"
-                    data-bs-target="#suiteModal2">Plus de détails</a>
                 </div>
               </div>
             </div>
+            <!-- product-card -->
           </div>
           <div class="swiper-slide">
             <div class="product-card position-relative overflow-hidden">
               <div class="image-holder">
-                <img src="assets/images/product-item3.jpg" alt="Suite 3" class="img-fluid overflow-hidden"
-                  data-bs-toggle="modal" data-bs-target="#suiteModal3" style="cursor: pointer;">
-                <div class="overlay">
-                  <div class="overlay-content">
-                    <span class="badge bg-info mb-2">Familiale</span>
-                    <h3 class="text-white mb-3">Suite Familiale</h3>
-                  </div>
-                </div>
+                <img src="assets/images/product-item3.jpg" alt="product-item" class="img-fluid overflow-hidden">
               </div>
               <div class="product-detail mt-3">
-                <h3><a href="#" data-bs-toggle="modal" data-bs-target="#suiteModal3"
-                    class="text-decoration-none text-black">Suite Familiale</a></h3>
+                <h3><a href="#">Suite Supérieure Imlil</a></h3>
                 <div class="detail position-absolute">
                   <table>
                     <tbody>
-                      <tr>
-                        <td class="pe-2"><strong>Prix:</strong></td>
-                        <td class="price"><strong>499€</strong> /Nuit</td>
-                      </tr>
-                      <tr>
-                        <td class="pe-2"><strong>Capacité:</strong></td>
-                        <td>4 personnes</td>
-                      </tr>
-                      <tr>
-                        <td class="pe-2"><strong>Équipements:</strong></td>
-                        <td>Wifi, TV, Salle de bain...</td>
-                      </tr>
+                    <div>
+                      <br>
+                    </div>
+                    <tr>
+                      <td class="pe-2"><strong>Price:</strong></td>
+                      <td class="price"><strong>399$</strong> /Pernight</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Size:</strong></td>
+                      <td>10 ft</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacity:</strong></td>
+                      <td>Max persion 2</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Bed:</strong></td>
+                      <td>Normal Beds</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Services:</strong></td>
+                      <td>Wifi, Television, Bathroom,...</td>
+                    </tr>
                     </tbody>
                   </table>
-                  <a href="#" class="btn btn-black btn-pill mt-3" data-bs-toggle="modal"
-                    data-bs-target="#suiteModal3">Plus de détails</a>
                 </div>
               </div>
             </div>
+            <!-- product-card -->
           </div>
           <div class="swiper-slide">
             <div class="product-card position-relative overflow-hidden">
               <div class="image-holder">
-                <img src="assets/images/product-item4.jpg" alt="Suite 4" class="img-fluid overflow-hidden"
-                  data-bs-toggle="modal" data-bs-target="#suiteModal4" style="cursor: pointer;">
-                <div class="overlay">
-                  <div class="overlay-content">
-                    <span class="badge bg-warning mb-2">Luxe</span>
-                    <h3 class="text-white mb-3">Suite Luxe</h3>
-                  </div>
-                </div>
+                <img src="assets/images/product-item4.jpg" alt="product-item" class="img-fluid overflow-hidden">
               </div>
               <div class="product-detail mt-3">
-                <h3><a href="#" data-bs-toggle="modal" data-bs-target="#suiteModal4"
-                    class="text-decoration-none text-black">Suite Luxe</a></h3>
+                <h3><a href="#">Suite Supérieure Asni</a></h3>
                 <div class="detail position-absolute">
                   <table>
+                    <div>
+                      <br>
+                    </div>
                     <tbody>
-                      <tr>
-                        <td class="pe-2"><strong>Prix:</strong></td>
-                        <td class="price"><strong>599€</strong> /Nuit</td>
-                      </tr>
-                      <tr>
-                        <td class="pe-2"><strong>Capacité:</strong></td>
-                        <td>2 personnes</td>
-                      </tr>
-                      <tr>
-                        <td class="pe-2"><strong>Équipements:</strong></td>
-                        <td>Wifi, TV, Salle de bain...</td>
-                      </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Price:</strong></td>
+                      <td class="price"><strong>399$</strong> /Pernight</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Size:</strong></td>
+                      <td>10 ft</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacity:</strong></td>
+                      <td>Max persion 2</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Bed:</strong></td>
+                      <td>Normal Beds</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Services:</strong></td>
+                      <td>Wifi, Television, Bathroom,...</td>
+                    </tr>
                     </tbody>
                   </table>
-                  <a href="#" class="btn btn-black btn-pill mt-3" data-bs-toggle="modal"
-                    data-bs-target="#suiteModal4">Plus de détails</a>
                 </div>
               </div>
             </div>
+            <!-- product-card -->
+          </div>
+          <div class="swiper-slide">
+            <div class="product-card position-relative overflow-hidden">
+              <div class="image-holder">
+                <img src="assets/images/product-item5.jpg" alt="product-item" class="img-fluid overflow-hidden">
+              </div>
+              <div class="product-detail mt-3">
+                <h3><a href="#">Suite Supérieure Ijoukak </a></h3>
+                <div class="detail position-absolute">
+                  <table>
+                    <div>
+                      <br>
+                    </div>
+                    <tbody>
+                    <tr>
+                      <td class="pe-2"><strong>Price:</strong></td>
+                      <td class="price"><strong>399$</strong> /Pernight</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Size:</strong></td>
+                      <td>10 ft</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacity:</strong></td>
+                      <td>Max persion 2</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Bed:</strong></td>
+                      <td>Normal Beds</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Services:</strong></td>
+                      <td>Wifi, Television, Bathroom,...</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- product-card -->
+          </div>
+          <div class="swiper-slide">
+            <div class="product-card position-relative overflow-hidden">
+              <div class="image-holder">
+                <img src="assets/images/product-item6.jpg" alt="product-item" class="img-fluid overflow-hidden">
+              </div>
+              <div class="product-detail mt-3">
+                <h3><a href="#">Suite Supérieure Tafza</a></h3>
+                <div class="detail position-absolute">
+                  <table>
+                    <div>
+                      <br>
+                    </div>
+                    <tbody>
+                    <tr>
+                      <td class="pe-2"><strong>Price:</strong></td>
+                      <td class="price"><strong>399$</strong> /Pernight</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Size:</strong></td>
+                      <td>10 ft</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacity:</strong></td>
+                      <td>Max persion 2</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Bed:</strong></td>
+                      <td>Normal Beds</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Services:</strong></td>
+                      <td>Wifi, Television, Bathroom,...</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- product-card -->
+          </div>
+          <div class="swiper-slide">
+            <div class="product-card position-relative overflow-hidden">
+              <div class="image-holder">
+                <img src="assets/images/product-item7.jpg" alt="product-item" class="img-fluid overflow-hidden">
+              </div>
+              <div class="product-detail mt-3">
+                <h3><a href="#">Suite Oukaimden</a></h3>
+                <div class="detail position-absolute">
+                  <table>
+                    <div>
+                      <br>
+                    </div>
+                    <tbody>
+                    <tr>
+                      <td class="pe-2"><strong>Price:</strong></td>
+                      <td class="price"><strong>399$</strong> /Pernight</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Size:</strong></td>
+                      <td>10 ft</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacity:</strong></td>
+                      <td>Max persion 2</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Bed:</strong></td>
+                      <td>Normal Beds</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Services:</strong></td>
+                      <td>Wifi, Television, Bathroom,...</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- product-card -->
+          </div>
+          <div class="swiper-slide">
+            <div class="product-card position-relative overflow-hidden">
+              <div class="image-holder">
+                <img src="assets/images/product-item8.jpg" alt="product-item" class="img-fluid overflow-hidden">
+              </div>
+              <div class="product-detail mt-3">
+                <h3><a href="#">Suite Toubkal</a></h3>
+                <div class="detail position-absolute">
+                  <table>
+                    <div>
+                      <br>
+                    </div>
+                    <tbody>
+                    <tr>
+                      <td class="pe-2"><strong>Price:</strong></td>
+                      <td class="price"><strong>399$</strong> /Pernight</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Size:</strong></td>
+                      <td>10 ft</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Capacity:</strong></td>
+                      <td>Max persion 2</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Bed:</strong></td>
+                      <td>Normal Beds</td>
+                    </tr>
+                    <tr>
+                      <td class="pe-2"><strong>Services:</strong></td>
+                      <td>Wifi, Television, Bathroom,...</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- product-card -->
           </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+      </div>
+      <div class="swiper-arrow">
+        <svg class="icon-arrow-right border rounded-circle position-absolute">
+          <use xlink:href="#icon-arrow-right" />
+        </svg>
       </div>
     </div>
   </div>
@@ -455,7 +642,7 @@
   </div>
 </section>
 
-<section id="testimonials" class="position-relative py-4" style="background: #f0e5da;">
+<section id="testimonials" class="position-relative py-4 bg-gray-100">
   <div class="container" style="max-width: 800px;">
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-3">
