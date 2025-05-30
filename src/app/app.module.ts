@@ -23,10 +23,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-
-// Import Bootstrap JavaScript
-import * as bootstrap from 'bootstrap';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,15 +59,5 @@ import * as bootstrap from 'bootstrap';
 })
 export class AppModule {
   constructor() {
-    // Initialize all Bootstrap components
-    document.addEventListener('DOMContentLoaded', () => {
-      const carousels = document.querySelectorAll('.carousel');
-      carousels.forEach(carousel => {
-        new bootstrap.Carousel(carousel, {
-          interval: 5000,
-          wrap: true
-        });
-      });
-    });
   }
 }
