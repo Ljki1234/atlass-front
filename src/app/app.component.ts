@@ -5,7 +5,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import {CookieBannerComponent} from './cookie-banner/cookie-banner.component';
-import { RecaptchaModule } from 'ng-recaptcha';
+// import { RecaptchaModule } from 'ng-recaptcha';
 import { Title, Meta } from '@angular/platform-browser';
 import { filter } from 'rxjs/operators';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -17,7 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-declare var Swiper: any;
+// declare var Swiper: any;
 
 @Component({
   selector: 'app-root',
@@ -29,7 +29,7 @@ declare var Swiper: any;
     MatInputModule,
     MatNativeDateModule,
     CookieBannerComponent,
-    RecaptchaModule,
+    // RecaptchaModule,
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
@@ -52,23 +52,23 @@ export class AppComponent implements AfterViewInit, OnInit {
   ) {}
 
   ngAfterViewInit(): void {
-    new Swiper('.product-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        }
-      }
-    });
+    // new Swiper('.product-swiper', {
+    //   slidesPerView: 1,
+    //   spaceBetween: 30,
+    //   loop: true,
+    //   navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    //   },
+    //   breakpoints: {
+    //     768: {
+    //       slidesPerView: 2,
+    //     },
+    //     1024: {
+    //       slidesPerView: 3,
+    //     }
+    //   }
+    // });
   }
 
   ngOnInit() {

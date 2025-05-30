@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Suite } from '../module/module-suite/models/suite';
 import { SuiteService } from '../module/module-suite/suite.service';
 import { ReservationService } from '../module/module-reservation/module-reservation.service';
@@ -11,17 +11,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { UserDialogComponent } from '../user-dialog/user-dialog.component';
-import {Meta, Title} from '@angular/platform-browser';
-import {BookingCheckService} from '../module/module-suite/models/booking-check.service';
-import {forkJoin} from 'rxjs';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { Meta, Title } from '@angular/platform-browser';
+import { BookingCheckService } from '../module/module-suite/models/booking-check.service';
+import { forkJoin } from 'rxjs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Router } from '@angular/router';
-import { MatDatepicker } from '@angular/material/datepicker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
 import { Swiper } from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
 import { SuiteDetailDialogComponent } from '../suite-detail-dialog/suite-detail-dialog.component';
 import { ReservationSuccessDialogComponent } from '../reservation-success-dialog/reservation-success-dialog.component';
 import { ReservationFailureDialogComponent } from '../reservation-failure-dialog/reservation-failure-dialog.component';
@@ -50,10 +47,10 @@ register();
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    SuiteDetailDialogComponent,
-    UserDialogComponent,
-    ReservationSuccessDialogComponent,
-    ReservationFailureDialogComponent,
+    // SuiteDetailDialogComponent,
+    // UserDialogComponent,
+    // ReservationSuccessDialogComponent,
+    // ReservationFailureDialogComponent,
     MatIconModule,
     MatFormFieldModule,
     MatSnackBarModule
@@ -69,19 +66,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   isChecking: boolean = false;
   today = new Date();
   @ViewChild('myVideo', { static: false }) myVideo!: ElementRef<HTMLVideoElement>;
-  photosGrouped: Array<Array<{thumb: string, large: string, alt: string}>> = [];
+  photosGrouped: Array<Array<{ thumb: string, large: string, alt: string }>> = [];
   currentPhoto = '';
   currentAlt = '';
   @ViewChild('photoModal') photoModalRef!: ElementRef;
   modalInstance: any;
   photos = [
-    { thumb: 'assets/images/photo1.jpg', large: 'assets/images/photo1.jpg', alt: 'photo1'},
+    { thumb: 'assets/images/photo1.jpg', large: 'assets/images/photo1.jpg', alt: 'photo1' },
     { thumb: 'assets/images/photo2.jpg', large: 'assets/images/photo2.jpg', alt: 'Photo 2' },
     { thumb: 'assets/images/photo3.jpg', large: 'assets/images/photo3.jpg', alt: 'Photo 3' },
     { thumb: 'assets/images/photo4.jpg', large: 'assets/images/photo4.jpg', alt: 'Photo 4' },
     { thumb: 'assets/images/photo5.jpg', large: 'assets/images/photo5.jpg', alt: 'Photo 5' },
     { thumb: 'assets/images/photo6.jpg', large: 'assets/images/photo6.jpg', alt: 'Photo 6' },
-    { thumb: 'assets/images/photo7.jpg', large: 'assets/images/photo7.jpg', alt: 'photo7'},
+    { thumb: 'assets/images/photo7.jpg', large: 'assets/images/photo7.jpg', alt: 'photo7' },
     { thumb: 'assets/images/photo8.jpg', large: 'assets/images/photo8.jpg', alt: 'Photo 8' },
     { thumb: 'assets/images/photo9.jpg', large: 'assets/images/photo9.jpg', alt: 'Photo 9' },
     { thumb: 'assets/images/photo10.jpg', large: 'assets/images/photo10.jpg', alt: 'Photo 10' },
@@ -100,7 +97,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private router: Router,
     private snackBar: MatSnackBar,
     private http: HttpClient
-  ) { this.today.setHours(0, 0, 0, 0);}
+  ) { this.today.setHours(0, 0, 0, 0); }
 
   minEndDate(): Date | null {
     if (!this.startDate) return null;
@@ -158,8 +155,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log('Alt text:', this.currentAlt);
 
     if (!this.modalInstance) {
-      this.modalInstance = new bootstrap.Modal(this.photoModalRef.nativeElement); }
-      this.modalInstance.show();
+      this.modalInstance = new bootstrap.Modal(this.photoModalRef.nativeElement);
+    }
+    this.modalInstance.show();
   }
 
   calculateTotalPrice(startDate: Date, endDate: Date, suitePrice: number): number {
@@ -219,7 +217,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.isChecking = false;
         if (bookingAvailable && localAvailable) {
           this.availabilityMessage = '';
-          
+
           // Find the selected suite to get its price
           const selectedSuite = this.suites.find(s => s.description === this.selectedSuiteDescription);
           if (!selectedSuite) {
