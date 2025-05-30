@@ -248,12 +248,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
         else {
           this.availabilityMessage = "Cette suite n'est pas disponible pour les dates choisies.";
+          setTimeout(() => {
+            this.availabilityMessage = '';
+          }, 3000);
         }
       },
       error: () => {
         this.isChecking = false;
         this.availabilityMessage = 'Une erreur est survenue lors de la vérification.';
-      }
+      },
     });
   }
 

@@ -26,7 +26,12 @@
 
       <!-- Guest Form Card -->
       <div class="form-card">
-        <app-guest-form (paymentSuccess)="processReservation()"></app-guest-form>
+        <app-guest-form 
+          [suitePrice]="bookingDetails.roomPrice"
+          [nightCount]="bookingDetails.nightCount"
+          [vatPercentage]="bookingDetails.vatPercentage"
+          (paymentSuccess)="processReservation()">
+        </app-guest-form>
       </div>
     </div>
     

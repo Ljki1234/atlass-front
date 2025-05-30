@@ -88,16 +88,11 @@ export class ReservationComponent implements OnInit {
       if (params['suitePrice']) {
         this.bookingDetails.roomPrice = parseFloat(params['suitePrice']);
       }
-      if (params['totalPrice']) {
-        this.bookingDetails.totalPrice = parseFloat(params['totalPrice']);
-      }
       if (params['vatPercentage']) {
         this.bookingDetails.vatPercentage = parseFloat(params['vatPercentage']);
         this.bookingDetails.vatAmount = (this.bookingDetails.roomPrice * this.bookingDetails.vatPercentage) / 100;
       }
-      if (params['cityTax']) {
-        this.bookingDetails.cityTax = parseFloat(params['cityTax']);
-      }
+      this.bookingDetails.cityTax = 0;
 
       // Calculate night count
       if (params['startDate'] && params['endDate']) {
@@ -106,6 +101,9 @@ export class ReservationComponent implements OnInit {
         const diffTime = Math.abs(end.getTime() - start.getTime());
         this.bookingDetails.nightCount = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       }
+
+      // Calcul du prix total = (Nombre de nuits * prix de la suite) + TVA
+      this.bookingDetails.totalPrice = (this.bookingDetails.nightCount * this.bookingDetails.roomPrice) + this.bookingDetails.vatAmount;
 
       // Set room features based on the selected suite
       this.setRoomFeatures(this.bookingDetails.roomName);

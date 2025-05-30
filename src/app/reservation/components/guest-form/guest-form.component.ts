@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -25,6 +25,10 @@ interface AdditionalService {
   imports: [CommonModule, ReactiveFormsModule]
 })
 export class GuestFormComponent implements OnInit {
+  @Input() suitePrice: number = 0;
+  @Input() nightCount: number = 0;
+  @Input() vatPercentage: number = 0;
+  
   guestForm: FormGroup;
   formValid: boolean = false;
   paypalRendered: boolean = false;
@@ -116,10 +120,13 @@ export class GuestFormComponent implements OnInit {
       if (params['suiteDescription']) {
         this.suiteDescription = params['suiteDescription'];
       }
-      if (params['totalPrice']) {
-        this.basePrice = parseFloat(params['totalPrice']);
-        this.updateTotalPrice();
-      }
+      // Calcul du prix de base = (nombre de nuits * prix de suite) + TVA
+      const baseAmount = this.suitePrice * this.nightCount;
+      const vatAmount = (baseAmount * this.vatPercentage) / 100;
+      this.basePrice = baseAmount + vatAmount;
+      // Initialiser le prix total avec le prix de base
+      this.totalPrice = this.basePrice;
+
       if (params['startDate']) {
         this.startDate = params['startDate'];
       }
@@ -144,6 +151,7 @@ export class GuestFormComponent implements OnInit {
   }
 
   private updateTotalPrice(): void {
+    // Le prix total est le prix de base plus les services additionnels
     const servicesTotal = this.selectedServices.reduce((sum, service) => sum + service.price, 0);
     this.totalPrice = this.basePrice + servicesTotal;
   }

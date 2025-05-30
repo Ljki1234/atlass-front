@@ -171,3 +171,7 @@ ul.list-unstyled li {
 #testimonials h5 {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.mt-3 col-12 text-center{
+  color: black;
+  font-weight: bold;
+}
