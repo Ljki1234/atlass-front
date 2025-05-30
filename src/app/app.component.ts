@@ -81,7 +81,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   private updateMetaTags() {
     const currentRoute = this.router.url;
-    
+
     // Default meta tags
     let title = 'Atlas Hotel - Luxury Accommodation';
     let description = 'Experience luxury and comfort at Atlas Hotel. Book your stay for an unforgettable experience.';
@@ -107,13 +107,13 @@ export class AppComponent implements AfterViewInit, OnInit {
     // Update meta tags
     this.metaService.updateTag({ name: 'description', content: description });
     this.metaService.updateTag({ name: 'keywords', content: keywords });
-    
+
     // Open Graph tags for social media
     this.metaService.updateTag({ property: 'og:title', content: title });
     this.metaService.updateTag({ property: 'og:description', content: description });
     this.metaService.updateTag({ property: 'og:image', content: image });
     this.metaService.updateTag({ property: 'og:url', content: window.location.href });
-    
+
     // Twitter Card tags
     this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.metaService.updateTag({ name: 'twitter:title', content: title });

@@ -36,7 +36,12 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "node_modules/swiper/swiper-bundle.min.js"
+              "node_modules/swiper/swiper-bundle.min.js",
+              "node_modules/@iconify/iconify/dist/iconify.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "canvg",
+              "core-js/modules/es.string.ends-with.js"
             ]
           },
           "configurations": {
@@ -70,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "atlass-front:build:production"
+              "buildTarget": "atlass-front:build:production"
             },
             "development": {
-              "browserTarget": "atlass-front:build:development"
+              "buildTarget": "atlass-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "atlass-front:build"
+            "buildTarget": "atlass-front:build"
           }
         },
         "test": {
@@ -106,4 +111,4 @@
       }
     }
   }
-} 
+}

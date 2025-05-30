@@ -28,8 +28,12 @@ import { ReservationFailureDialogComponent } from '../reservation-failure-dialog
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { register } from 'swiper/element/bundle';
 
 declare var bootstrap: any;
+
+// Enregistrer les éléments Swiper
+register();
 
 @Component({
   selector: 'app-home',
@@ -267,25 +271,41 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.initSwiper();
+  }
+
+  private initSwiper() {
     this.swiper = new Swiper('.product-swiper', {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
       navigation: {
-        nextEl: '.icon-arrow-right',
-        prevEl: '.icon-arrow-left',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        640: {
-          slidesPerView: 2,
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20
         },
         768: {
           slidesPerView: 2,
+          spaceBetween: 30
         },
         1024: {
           slidesPerView: 3,
-        },
+          spaceBetween: 30
+        }
       },
+      effect: 'slide',
+      speed: 800,
+      grabCursor: true,
+      keyboard: {
+        enabled: true,
+      },
+      mousewheel: {
+        forceToAxis: true,
+      }
     });
   }
 }
