@@ -20,44 +20,44 @@
     const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);
 
-    const datePicker = flatpickr('#date-picker', {
-      mode: 'range',
-      minDate: 'today',
-      dateFormat: 'd/m/Y',
-      locale: 'fr',
-      inline: true,
-      showMonths: 2,
-      onChange: function(selectedDates, dateStr) {
-        if (selectedDates.length === 2) {
-          startDate = selectedDates[0];
-          endDate = selectedDates[1];
+    // const datePicker = flatpickr('#date-picker', {
+    //   mode: 'range',
+    //   minDate: 'today',
+    //   dateFormat: 'd/m/Y',
+    //   locale: 'fr',
+    //   inline: true,
+    //   showMonths: 2,
+    //   onChange: function(selectedDates, dateStr) {
+    //     if (selectedDates.length === 2) {
+    //       startDate = selectedDates[0];
+    //       endDate = selectedDates[1];
 
-          // Calculate number of nights
-          const timeDiff = endDate.getTime() - startDate.getTime();
-          totalNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    //       // Calculate number of nights
+    //       const timeDiff = endDate.getTime() - startDate.getTime();
+    //       totalNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-          // Update the date inputs
-          document.getElementById('arrival-date').value = formatDate(startDate);
-          document.getElementById('departure-date').value = formatDate(endDate);
-          document.getElementById('nights').value = totalNights;
+    //       // Update the date inputs
+    //       document.getElementById('arrival-date').value = formatDate(startDate);
+    //       document.getElementById('departure-date').value = formatDate(endDate);
+    //       document.getElementById('nights').value = totalNights;
 
-          // Enable the next button
-          const nextBtn = document.querySelector('.next-step[data-step="1"]');
-          nextBtn.disabled = false;
-        }
-      },
-      disable: [
-        function(date) {
-          // Example: disable specific dates or date ranges
-          // Return true to disable
-          // Example: disable 2nd week of November 2025
-          const disabledStart = new Date(2025, 10, 8);
-          const disabledEnd = new Date(2025, 10, 15);
+    //       // Enable the next button
+    //       const nextBtn = document.querySelector('.next-step[data-step="1"]');
+    //       nextBtn.disabled = false;
+    //     }
+    //   },
+    //   disable: [
+    //     function(date) {
+    //       // Example: disable specific dates or date ranges
+    //       // Return true to disable
+    //       // Example: disable 2nd week of November 2025
+    //       const disabledStart = new Date(2025, 10, 8);
+    //       const disabledEnd = new Date(2025, 10, 15);
 
-          return (date >= disabledStart && date <= disabledEnd);
-        }
-      ]
-    });
+    //       return (date >= disabledStart && date <= disabledEnd);
+    //     }
+    //   ]
+    // });
 
     // Format date
     function formatDate(date) {
@@ -102,12 +102,12 @@
     });
 
     // Guest selection
-    document.getElementById('guests').addEventListener('change', function() {
-      guests = parseInt(this.value);
-      if (selectedSuite) {
-        document.getElementById('selected-suite-details').textContent = `${guests} personnes · ${totalNights} nuits`;
-      }
-    });
+    // document.getElementById('guests').addEventListener('change', function() {
+    //   guests = parseInt(this.value);
+    //   if (selectedSuite) {
+    //     document.getElementById('selected-suite-details').textContent = `${guests} personnes · ${totalNights} nuits`;
+    //   }
+    // });
 
     // Next step buttons
     nextButtons.forEach(button => {
@@ -323,9 +323,9 @@
     }
 
     // Print confirmation
-    document.getElementById('print-confirmation').addEventListener('click', function() {
-      window.print();
-    });
+    // document.getElementById('print-confirmation').addEventListener('click', function() {
+    //   window.print();
+    // });
 
     // Form validation
     function validateForm(form) {
@@ -565,8 +565,8 @@
     });
 
 
-    new DateTimePickerComponent.DatePicker('select-arrival-date');
-    new DateTimePickerComponent.DatePicker('select-departure-date');
+    // new DateTimePickerComponent.DatePicker('select-arrival-date');
+    // new DateTimePickerComponent.DatePicker('select-departure-date');
 
 
 
