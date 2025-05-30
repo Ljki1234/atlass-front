@@ -167,3 +167,7 @@ ul.list-unstyled li {
   font-weight: 600;
   color: #1976d2;
 }
+
+#testimonials h5 {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
