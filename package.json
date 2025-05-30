@@ -30,7 +30,6 @@
     "express": "^5.1.0",
     "jspdf": "^3.0.1",
     "jspdf-autotable": "^5.0.2",
-    "ng-recaptcha": "^13.2.1",
     "ngx-captcha": "^13.0.0",
     "rxjs": "~7.8.0",
     "swiper": "^11.2.8",

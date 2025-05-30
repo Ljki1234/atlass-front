@@ -32,6 +32,9 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/swiper/swiper-bundle.min.css",
+              "src/assets/css/style.css",
+              "src/assets/css/vendor.css",
+              "src/assets/css/date-time-picker-component.min.css",
               "src/styles.scss"
             ],
             "scripts": [
@@ -110,5 +113,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
