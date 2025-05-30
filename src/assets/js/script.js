@@ -15,50 +15,6 @@
     const nextButtons = document.querySelectorAll('.next-step');
     const prevButtons = document.querySelectorAll('.prev-step');
 
-    // Initialize Flatpickr calendar
-    const today = new Date();
-    const tomorrow = new Date();
-    tomorrow.setDate(today.getDate() + 1);
-
-    // const datePicker = flatpickr('#date-picker', {
-    //   mode: 'range',
-    //   minDate: 'today',
-    //   dateFormat: 'd/m/Y',
-    //   locale: 'fr',
-    //   inline: true,
-    //   showMonths: 2,
-    //   onChange: function(selectedDates, dateStr) {
-    //     if (selectedDates.length === 2) {
-    //       startDate = selectedDates[0];
-    //       endDate = selectedDates[1];
-
-    //       // Calculate number of nights
-    //       const timeDiff = endDate.getTime() - startDate.getTime();
-    //       totalNights = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-    //       // Update the date inputs
-    //       document.getElementById('arrival-date').value = formatDate(startDate);
-    //       document.getElementById('departure-date').value = formatDate(endDate);
-    //       document.getElementById('nights').value = totalNights;
-
-    //       // Enable the next button
-    //       const nextBtn = document.querySelector('.next-step[data-step="1"]');
-    //       nextBtn.disabled = false;
-    //     }
-    //   },
-    //   disable: [
-    //     function(date) {
-    //       // Example: disable specific dates or date ranges
-    //       // Return true to disable
-    //       // Example: disable 2nd week of November 2025
-    //       const disabledStart = new Date(2025, 10, 8);
-    //       const disabledEnd = new Date(2025, 10, 15);
-
-    //       return (date >= disabledStart && date <= disabledEnd);
-    //     }
-    //   ]
-    // });
-
     // Format date
     function formatDate(date) {
       const day = date.getDate().toString().padStart(2, '0');

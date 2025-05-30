@@ -540,110 +540,108 @@
   </div>
 </section>
 
-<section id="booking-wrap">
+<section id="booking-wrap" class="padding-large">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="booking-form-wrap">
-          <h2>Réservez Votre Séjour</h2>
-          <form #bookingForm="ngForm" (ngSubmit)="checkAvailability()" class="booking-form">
-            <div class="row g-4">
-              <!-- Date d'arrivée -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label">Date d'arrivée</label>
-                  <div class="input-group">
-                    <span class="input-group-text">
-                      <svg class="icon">
-                        <use xlink:href="#calendar"></use>
-                      </svg>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Sélectionnez la date" data-date-format="Y-m-d"
-                      data-mode="range" readonly="readonly">
-                  </div>
-                </div>
-              </div>
+    <div class="row">
 
-              <!-- Date de départ -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label">Date de départ</label>
-                  <div class="input-group">
-                    <span class="input-group-text">
-                      <svg class="icon">
-                        <use xlink:href="#calendar"></use>
-                      </svg>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Sélectionnez la date" data-date-format="Y-m-d"
-                      data-mode="range" readonly="readonly">
-                  </div>
-                </div>
-              </div>
+      <form
+        class="booking-form d-flex flex-wrap align-items-center justify-content-around"
+        #bookingForm="ngForm"
+        (ngSubmit)="checkAvailability()"
+        novalidate
+      >
+        <div class="booking-content d-flex flex-wrap col-lg-8">
+          <!-- Date Arrivée -->
+          <mat-form-field appearance="fill" class="booking-item pe-2">
+            <mat-label>Arrivée</mat-label>
+            <input
+              matInput
+              [matDatepicker]="pickerStart"
+              [min]="today"
+              placeholder="Choisir une date"
+              name="startDate"
+              [(ngModel)]="startDate"
+              required
+              #startDateCtrl="ngModel"
+              (dateChange)="pickerStart.close()"
+            />
+            <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+            <mat-datepicker #pickerStart></mat-datepicker>
+            <mat-error *ngIf="startDateCtrl.invalid && startDateCtrl.touched">
+              Date obligatoire
+            </mat-error>
+          </mat-form-field>
 
-              <!-- Suite -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label">Suite</label>
-                  <div class="input-group">
-                    <span class="input-group-text">
-                      <svg class="icon">
-                        <use xlink:href="#hotel"></use>
-                      </svg>
-                    </span>
-                    <select class="form-select" [(ngModel)]="selectedSuiteDescription" name="selectedSuiteDescription">
-                      <option value="" disabled selected>Choisissez votre suite</option>
-                      <option *ngFor="let suite of suites" [value]="suite.description">
-                        {{ suite.description }}
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+          <!-- Date Départ -->
+          <mat-form-field appearance="fill" class="booking-item ps-2">
+            <mat-label>Départ</mat-label>
+            <input
+              matInput
+              [matDatepicker]="pickerEnd"
+              [min]="minEndDate()"
+              placeholder="Choisir une date"
+              name="endDate"
+              [(ngModel)]="endDate"
+              required
+              #endDateCtrl="ngModel"
+              (dateChange)="pickerEnd.close()"
+            />
+            <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+            <mat-datepicker #pickerEnd></mat-datepicker>
+            <mat-error *ngIf="endDateCtrl.invalid && endDateCtrl.touched">
+              Date obligatoire
+            </mat-error>
+          </mat-form-field>
 
-              <!-- Nombre de personnes -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label">Nombre de personnes</label>
-                  <div class="input-group">
-                    <span class="input-group-text">
-                      <svg class="icon">
-                        <use xlink:href="#page-arrow"></use>
-                      </svg>
-                    </span>
-                    <input type="number" class="form-control" placeholder="Nombre de personnes"
-                      [(ngModel)]="numberOfGuests" name="numberOfGuests">
-                  </div>
-                </div>
-              </div>
+          <!-- Suite -->
+          <mat-form-field appearance="fill" class="booking-item pe-2">
+            <mat-label>Suite</mat-label>
+            <mat-select
+              name="suite"
+              [(ngModel)]="selectedSuiteDescription"
+              required
+              #suiteCtrl="ngModel"
+            >
+              <mat-option value="" disabled>-- Choisir une suite --</mat-option>
+              <mat-option *ngFor="let suite of suites" [value]="suite.description">
+                {{ suite.description }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="suiteCtrl.invalid && suiteCtrl.touched">
+              Veuillez choisir une suite
+            </mat-error>
+          </mat-form-field>
 
-              <!-- Prix -->
-              <div class="col-12">
-                <div class="form-group">
-                  <label class="form-label">Prix total</label>
-                  <div class="input-group">
-                    <span class="input-group-text">
-                      <svg class="icon">
-                        <use xlink:href="#money"></use>
-                      </svg>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Prix" readonly>
-                  </div>
-                </div>
-              </div>
+          <!-- Personne -->
+          <mat-form-field appearance="fill" class="booking-item ps-2">
+            <mat-label>Personne</mat-label>
+            <mat-select
+              name="guests"
+              [(ngModel)]="numberOfGuests"
+              required
+              #suiteCtrl="ngModel"
+            >
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+            </mat-select>
+          </mat-form-field>
 
-              <!-- Bouton de réservation -->
-              <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary">
-                  Réserver maintenant
-                  <svg>
-                    <use xlink:href="#arrow-icon"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </form>
         </div>
-      </div>
+
+        <!-- Bouton submit, désactivé si formulaire invalide -->
+        <button
+          type="submit"
+          class="btn btn-arrow btn-pill btn-medium btn-dark position-relative"
+          [disabled]="bookingForm.invalid"
+        >
+          <span>Vérifier disponibilité</span>
+        </button>
+
+        <div *ngIf="availabilityMessage" class="mt-3 col-12 text-center">
+          <p class="text-info">{{ availabilityMessage }}</p>
+        </div>
+      </form>
+
     </div>
   </div>
 </section>

@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/flatpickr/dist/flatpickr.min.css",
               "node_modules/swiper/swiper-bundle.min.css",
               "src/assets/css/style.css",
               "src/assets/css/vendor.css",
@@ -40,9 +42,11 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/swiper/swiper-bundle.min.js",
+              "node_modules/flatpickr/dist/flatpickr.min.js",
               "node_modules/@iconify/iconify/dist/iconify.min.js",
               "src/assets/js/jquery-1.11.0.min.js",
               "src/assets/js/modernizr.js",
+              "src/assets/js/date-time-picker.min.js",
               "src/assets/js/plugins.js",
               "src/assets/js/script.js"
             ],
@@ -110,6 +114,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],
             "scripts": []
