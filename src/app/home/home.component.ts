@@ -244,6 +244,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
               vatPercentage: 10,
               cityTax: 120.00
             }
+          }).then(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           });
         }
         else {
